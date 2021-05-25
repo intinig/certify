@@ -85,7 +85,11 @@ func (c *Certify) GetCertificate(hello *tls.ClientHelloInfo) (cert *tls.Certific
 
 	name := strings.ToLower(hello.ServerName)
 	if name == "" {
-		return nil, errors.New("missing server name")
+		if c.CommonName == "" {
+			return nil, errors.New("missing server name")
+		} else {
+			name = c.CommonName
+		}
 	}
 	if strings.ContainsAny(name, `/\`) {
 		return nil, errors.New("server name contains invalid character")
