@@ -1,3 +1,7 @@
+# intinig's Fork
+
+This fork introduces a minor behavior difference compared to main branch that we use to support HTTP2 on AWS ALB. 
+
 # Certify
 
 [![CircleCI](https://img.shields.io/circleci/project/github/johanbrandhorst/certify/master.svg?style=flat-square)](https://circleci.com/gh/johanbrandhorst/certify)
